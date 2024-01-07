@@ -22,26 +22,19 @@ def scrape_decathlon_product_with_selenium(url):
 
     install()
     
-    # chrome_options = Options()
-    # chrome_options.add_argument("--headless")
-    options = Options() 
-    options.add_argument("--disable-extensions")
+    # Use ChromeDriverManager to get the WebDriver
+    driver = webdriver.Chrome()
 
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument("--disable-extensions")
     options.add_argument("--display=:99")
     options.add_argument("--no-sandbox")  # Fix for sandbox issue on Linux
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
-    options.headless = True
-    driver.set_page_load_timeout(60) 
+
+    driver.set_page_load_timeout(60)
     wait = WebDriverWait(driver, 30)
-
-
-
-
-    
-
-    # Use ChromeDriverManager to get the WebDriver
-    driver = webdriver.Chrome(options=options)
 
 
    
