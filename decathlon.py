@@ -20,10 +20,10 @@ from chromedriver_autoinstaller import install
 def scrape_decathlon_product_with_selenium(url):
     
 
-    install()
-    
+    chromedriver_path = ChromeDriverManager().install()
+
     # Use ChromeDriverManager to get the WebDriver
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(executable_path=chromedriver_path)
 
     options = Options()
     options.add_argument("--headless")
