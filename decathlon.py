@@ -23,26 +23,23 @@ def scrape_decathlon_product_with_selenium(url):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     
-    # Set the path to the downloaded ChromeDriver executable
-    chromedriver_path = "./driver/chromedriver" 
-
-    # Initialize the WebDriver with the specified options and executable path
-    driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
-
-
-
-    #driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     
 
+
+
+
+    
     # Check if running on Streamlit Sharing
     is_streamlit_sharing = "IS_STREAMLIT_SHARING" in st.secrets
 
-    if not is_streamlit_sharing:
-        # If not on Streamlit Sharing, use webdriver_manager
-        driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-    else:
+    if is_streamlit_sharing:
         # If on Streamlit Sharing, use the system installed ChromeDriver
         driver = webdriver.Chrome(options=chrome_options)
+    else:
+        # If not on Streamlit Sharing, use webdriver_manager
+        chromedriver_path = ChromeDriverManager().install()
+        driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
+
    
     # Initialize csv_writer outside the try block
     try:
