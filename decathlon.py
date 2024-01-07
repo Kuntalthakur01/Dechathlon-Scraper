@@ -15,23 +15,22 @@ from chromedriver_autoinstaller import install
 
 
 # Function to scrape Decathlon product with Selenium
-# def install_chromedriver():
-#     install()
+
 def scrape_decathlon_product_with_selenium(url):
     
-
-    chromedriver_path = ChromeDriverManager().install()
-
-    # Use ChromeDriverManager to get the WebDriver
-    driver = webdriver.Chrome(executable_path=chromedriver_path)
-
+    chromium_path = "/Users/kuntal/Documents/GitHub/Dechathlon-Scraper/chrome-linux/chrome"
     options = Options()
+    options.binary_location = chromium_path
     options.add_argument("--headless")
     options.add_argument("--disable-extensions")
     options.add_argument("--display=:99")
     options.add_argument("--no-sandbox")  # Fix for sandbox issue on Linux
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
+
+ 
+    # Create Chrome WebDriver instance
+    driver = webdriver.Chrome('./driver/chromedriver', options=options)
 
     driver.set_page_load_timeout(60)
     wait = WebDriverWait(driver, 30)
