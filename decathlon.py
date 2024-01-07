@@ -12,6 +12,9 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from io import StringIO
 from webdriver_manager.chrome import ChromeDriverManager
 
+import subprocess
+
+subprocess.run(["pip", "install", "webdriver_manager"])
 # Function to scrape Decathlon product with Selenium
 #def install_chromedriver():
     #install()
