@@ -23,8 +23,8 @@ def scrape_decathlon_product_with_selenium(url):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     
-    # Use ChromeDriverManager to get the path to the ChromeDriver executable
-    chromedriver_path = ChromeDriverManager(version="97.0.4692.71").install()
+    # Set the path to the downloaded ChromeDriver executable
+    chromedriver_path = "./driver/chromedriver" 
 
     # Initialize the WebDriver with the specified options and executable path
     driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
