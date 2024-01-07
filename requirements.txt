@@ -52,3 +52,7 @@ urllib3==2.1.0
 validators==0.22.0
 wsproto==1.2.0
 zipp==3.17.0
+streamlit
+selenium
+webdriver_manager
+chromedriver-autoinstaller
