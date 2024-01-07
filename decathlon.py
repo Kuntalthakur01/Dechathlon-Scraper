@@ -27,7 +27,9 @@ def scrape_decathlon_product_with_selenium(url):
 
 
     chrome_options.binary_location = "./driver/chromedriver"
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    chrome_version = "120.0.6099.129" 
+
+    driver = webdriver.Chrome(ChromeDriverManager(version=chrome_version).install())    
 
    
     # Initialize csv_writer outside the try block
