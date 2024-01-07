@@ -27,7 +27,7 @@ def scrape_decathlon_product_with_selenium(url):
 
 
     chrome_options.binary_location = "./driver/chromedriver"
-    chrome_version = "120.0.6099.129" 
+    chrome_version = "108.0.5359.71" 
 
     driver = webdriver.Chrome(ChromeDriverManager(version=chrome_version).install())    
 
