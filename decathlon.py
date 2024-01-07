@@ -12,8 +12,11 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from io import StringIO
 
 # Function to scrape Decathlon product with Selenium
-def scrape_decathlon_product_with_selenium(url):
+def install_chromedriver():
     install()
+def scrape_decathlon_product_with_selenium(url):
+    # Install ChromeDriver
+    install_chromedriver()
     chrome_options = Options()
     chrome_options.add_argument("--headless")
 
