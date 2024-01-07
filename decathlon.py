@@ -11,6 +11,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from io import StringIO
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
+from chromedriver_autoinstaller import install
 
 
 # Function to scrape Decathlon product with Selenium
@@ -18,15 +19,21 @@ from selenium import webdriver
 #     install()
 def scrape_decathlon_product_with_selenium(url):
     
-    #install_chromedriver()
+
+    install()
     
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     
-        
-    chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+
+
+
+
+    
+
+    # Use ChromeDriverManager to get the WebDriver
+    driver = webdriver.Chrome(options=chrome_options)
+
 
    
     # Initialize csv_writer outside the try block
