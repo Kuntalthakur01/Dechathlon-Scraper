@@ -2,7 +2,7 @@
 import time
 import csv
 import streamlit as st
-from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from chromedriver_autoinstaller import install
 from selenium.webdriver.common.by import By
@@ -11,17 +11,27 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from io import StringIO
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium import webdriver
 
 
 # Function to scrape Decathlon product with Selenium
-def install_chromedriver():
-    install()
+# def install_chromedriver():
+#     install()
 def scrape_decathlon_product_with_selenium(url):
     
-    install_chromedriver()
+    #install_chromedriver()
+    
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    
+    # Specify the path to the ChromeDriver executable
+    chromedriver_path = "./driver/chromedriver" 
+    
+    # Initialize the WebDriver with the specified options and executable path
+    driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
+
+    #driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    
 
     # # Check if running on Streamlit Sharing
     # is_streamlit_sharing = "IS_STREAMLIT_SHARING" in st.secrets
