@@ -23,7 +23,7 @@ def scrape_decathlon_product_with_selenium(url):
     chrome_options.add_argument("--headless")
 
     # Initialize the WebDriver with the specified options
-    driver = webdriver.Chrome(options=chrome_options)
+    driver = ChromeDriverManager(options=chrome_options)
    
     # Initialize csv_writer outside the try block
     try:
