@@ -2,7 +2,6 @@
 import time
 import csv
 import streamlit as st
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from chromedriver_autoinstaller import install
 from selenium.webdriver.common.by import By
@@ -25,10 +24,11 @@ def scrape_decathlon_product_with_selenium(url):
     chrome_options.add_argument("--headless")
     
     # Specify the path to the ChromeDriver executable
-    chromedriver_path = "./driver/chromedriver" 
-    
+    chromedriver_path = "./driver/chromedriver"
+
     # Initialize the WebDriver with the specified options and executable path
     driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
+
 
     #driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     
