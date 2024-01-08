@@ -18,8 +18,6 @@ from selenium.webdriver.chrome.service import Service
 # Function to scrape Decathlon product with Selenium
 
 def scrape_decathlon_product_with_selenium(url):
-    
-
     chromium_path = "chrome-linux/chrome"
     chromedriver_path = "driver/chromedriver"  # Adjust the path accordingly
     service = Service(executable_path=chromedriver_path)
@@ -32,24 +30,16 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
 
-
-    # # Create Chrome WebDriver instance
-    # driver = webdriver.Chrome(service=service,options=options)
-    # #driver = webdriver.Chrome(ChromeDriverManager().install(),options=options) # FOR development
-
-    # #driver = webdriver.Chrome(options=options)
-    
     # Use ChromeDriverManager to automatically download and install ChromeDriver
-    chromedriver_path = ChromeDriverManager(version="114.0.5735.90").install()
+    chromedriver_path = ChromeDriverManager(chrome_version="114.0.5735.90").install()
     service = Service(executable_path=chromedriver_path)
 
     # Create Chrome WebDriver instance
     driver = webdriver.Chrome(service=service, options=options)
 
-
-
     driver.set_page_load_timeout(60)
     wait = WebDriverWait(driver, 30)
+
 
 
    
