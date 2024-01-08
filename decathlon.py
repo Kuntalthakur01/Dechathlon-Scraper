@@ -33,11 +33,18 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--window-size=1920,1080")  # Set the window size
 
 
-    # Create Chrome WebDriver instance
-    driver = webdriver.Chrome(service=service,options=options)
-    #driver = webdriver.Chrome(ChromeDriverManager().install(),options=options) # FOR development
+    # # Create Chrome WebDriver instance
+    # driver = webdriver.Chrome(service=service,options=options)
+    # #driver = webdriver.Chrome(ChromeDriverManager().install(),options=options) # FOR development
 
-    #driver = webdriver.Chrome(options=options)
+    # #driver = webdriver.Chrome(options=options)
+    
+    # Use ChromeDriverManager to automatically download and install ChromeDriver
+    chromedriver_path = ChromeDriverManager().install()
+    service = Service(executable_path=chromedriver_path)
+
+    # Create Chrome WebDriver instance
+    driver = webdriver.Chrome(service=service, options=options)
 
 
 
