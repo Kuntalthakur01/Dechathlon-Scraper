@@ -19,8 +19,10 @@ from selenium.webdriver.chrome.service import Service
 
 def scrape_decathlon_product_with_selenium(url):
     
+
     chromium_path = "/Users/kuntal/Documents/GitHub/Dechathlon-Scraper/chrome-linux/chrome"
-    service = Service(executable_path='./chromedriver')
+    chromedriver_path = "driver/chromedriver"  # Adjust the path accordingly
+    service = Service(executable_path=chromedriver_path)
     options = Options()
     options.binary_location = chromium_path
     options.add_argument("--headless")
