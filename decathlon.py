@@ -30,13 +30,14 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
 
-    driver_manager = ChromeDriverManager()
-    chromedriver_path = driver_manager.install()
-    # Create Chrome WebDriver instance
-    driver = webdriver.Chrome(service=service, options=options)
+    # driver_manager = ChromeDriverManager()
+    # chromedriver_path = driver_manager.install()
+    # # Create Chrome WebDriver instance
+    # driver = webdriver.Chrome(service=service, options=options)
 
-    driver.set_page_load_timeout(60)
-    wait = WebDriverWait(driver, 30)
+    # driver.set_page_load_timeout(60)
+    # wait = WebDriverWait(driver, 30)
+    driver = webdriver.Chrome()
 
 
 
