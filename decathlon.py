@@ -40,7 +40,7 @@ def scrape_decathlon_product_with_selenium(url):
     # #driver = webdriver.Chrome(options=options)
     
     # Use ChromeDriverManager to automatically download and install ChromeDriver
-    chromedriver_path = ChromeDriverManager().install()
+    chromedriver_path = ChromeDriverManager(version="114.0.5735.90").install()
     service = Service(executable_path=chromedriver_path)
 
     # Create Chrome WebDriver instance
