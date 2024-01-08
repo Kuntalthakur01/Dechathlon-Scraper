@@ -35,7 +35,8 @@ def scrape_decathlon_product_with_selenium(url):
 
 
     # Create Chrome WebDriver instance
-    driver = webdriver.Chrome(service=service,options=options)
+    #driver = webdriver.Chrome(service=service,options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
 
     #driver = webdriver.Chrome(options=options)
 
