@@ -12,6 +12,7 @@ from io import StringIO
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from chromedriver_autoinstaller import install
+from selenium.webdriver.chrome.service import Service
 
 
 # Function to scrape Decathlon product with Selenium
@@ -19,6 +20,7 @@ from chromedriver_autoinstaller import install
 def scrape_decathlon_product_with_selenium(url):
     
     chromium_path = "/Users/kuntal/Documents/GitHub/Dechathlon-Scraper/chrome-linux/chrome"
+    service = Service(executable_path='./chromedriver')
     options = Options()
     options.binary_location = chromium_path
     options.add_argument("--headless")
@@ -28,9 +30,9 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
 
- 
+
     # Create Chrome WebDriver instance
-    driver = webdriver.Chrome(executable_path='driver/chromedriver',options=options)
+    driver = webdriver.Chrome(service=service,options=options)
 
     #driver = webdriver.Chrome(options=options)
 
