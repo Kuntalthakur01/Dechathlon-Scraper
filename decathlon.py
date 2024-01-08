@@ -27,11 +27,11 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--no-sandbox")  # Fix for sandbox issue on Linux
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
-
+    executable_path= './driver/chromedriver'
  
     # Create Chrome WebDriver instance
     #driver = webdriver.Chrome(options=options)
-    driver = webdriver.Chrome(options=options, executable_path='./driver/chromedriver')
+    driver = webdriver.Chrome(options=options, executable_path=executable_path)
 
 
 
