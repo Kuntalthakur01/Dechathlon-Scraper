@@ -30,11 +30,8 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
 
-    # Use ChromeDriverManager to automatically download and install ChromeDriver
     driver_manager = ChromeDriverManager()
-    driver_manager.version = "114.0.5735.90"
     chromedriver_path = driver_manager.install()
-    driver_manager.version = "114.0.5249.61"
     # Create Chrome WebDriver instance
     driver = webdriver.Chrome(service=service, options=options)
 
