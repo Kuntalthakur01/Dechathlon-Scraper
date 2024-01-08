@@ -20,7 +20,7 @@ from selenium.webdriver.chrome.service import Service
 def scrape_decathlon_product_with_selenium(url):
     
 
-    chromium_path = "chrome-linux/chrome"
+    chromium_path = "chrome-mac/Chromium.app/Contents/MacOS/Chromium"
     
     chromedriver_path = "driver/chromedriver"  # Adjust the path accordingly
     service = Service(executable_path=chromedriver_path)
