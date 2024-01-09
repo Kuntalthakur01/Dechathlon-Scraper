@@ -14,20 +14,9 @@ from selenium import webdriver
 from chromedriver_autoinstaller import install
 from selenium.webdriver.chrome.service import Service
 
-
-
-# Function to scrape Decathlon product with Selenium
-
-def scrape_decathlon_product_with_selenium(url):
-    chromium_path = "chrome-linux/chrome"
-    # chromedriver_path = "driver/chromedriver"  # Adjust the path accordingly
-    # service = Service(executable_path=chromedriver_path)
-    
-    
-    
+@st.experimental_singleton
+def get_driver():
     options = Options()
-    
-    options.binary_location = chromium_path
     options.add_argument("--headless")
     options.add_argument("--disable-extensions")
     options.add_argument("--display=:99")
@@ -35,6 +24,29 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
     options.add_argument("--disable-gpu")
+
+    return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+
+# Function to scrape Decathlon product with Selenium
+
+def scrape_decathlon_product_with_selenium(url):
+    # chromium_path = "chrome-linux/chrome"
+    # # chromedriver_path = "driver/chromedriver"  # Adjust the path accordingly
+    # # service = Service(executable_path=chromedriver_path)
+    
+    
+    
+    # options = Options()
+    
+    # options.binary_location = chromium_path
+    # options.add_argument("--headless")
+    # options.add_argument("--disable-extensions")
+    # options.add_argument("--display=:99")
+    # options.add_argument("--no-sandbox")  # Fix for sandbox issue on Linux
+    # options.add_argument("--disable-dev-shm-usage")
+    # options.add_argument("--window-size=1920,1080")  # Set the window size
+    # options.add_argument("--disable-gpu")
     
     # driver_manager = ChromeDriverManager()
     # chromedriver_path = driver_manager.install()
@@ -45,11 +57,12 @@ def scrape_decathlon_product_with_selenium(url):
     # wait = WebDriverWait(driver, 30)
     # Create Chrome WebDriver instance
     # Use ChromeDriverManager to automatically download and manage ChromeDriver
-    chrome_driver_path = ChromeDriverManager("97.0.4692.71").install()
+    # chrome_driver_path = ChromeDriverManager("97.0.4692.71").install()
 
-    # Initialize Chrome WebDriver with options
-    driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
+    # # Initialize Chrome WebDriver with options
+    # driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
 
+    driver = get_driver()
 
     
 

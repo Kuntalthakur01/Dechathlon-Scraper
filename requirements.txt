@@ -59,3 +59,7 @@ google-chrome-stable
 
 # ChromeDriver
 chromedriver==109.0.5414.74
+
+streamlit
+seleniumbase
+webdriver-manager
