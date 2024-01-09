@@ -23,6 +23,9 @@ def scrape_decathlon_product_with_selenium(url):
     # chromedriver_path = "driver/chromedriver"  # Adjust the path accordingly
     # service = Service(executable_path=chromedriver_path)
     
+    # Create Chrome WebDriver instance using ChromeDriverManager
+    chrome_driver_path = ChromeDriverManager().install()
+    
     options = Options()
     
     #options.binary_location = chromium_path
@@ -42,7 +45,7 @@ def scrape_decathlon_product_with_selenium(url):
     # driver.set_page_load_timeout(60)
     # wait = WebDriverWait(driver, 30)
     # Create Chrome WebDriver instance
-    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
+    driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
 
     
 
