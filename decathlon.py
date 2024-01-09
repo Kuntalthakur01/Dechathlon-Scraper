@@ -37,7 +37,7 @@ def scrape_decathlon_product_with_selenium(url):
 
     # driver.set_page_load_timeout(60)
     # wait = WebDriverWait(driver, 30)
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(service=service)
 
 
 
