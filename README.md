@@ -2,7 +2,7 @@
 
 # Dechathlon Scraper
 
-This is a scraper built to extract data from Decathlon page. The Ui is built by streamlit and currently this is not deployed online
+This is a scraper built to extract data from the Decathlon page. The app is built by streamlit and currently, this is not deployed online
 
 ## Usage
 
