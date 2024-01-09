@@ -21,11 +21,8 @@ from selenium.webdriver.chrome.service import Service
 
 def scrape_decathlon_product_with_selenium(url):
 
-    
-    
-    
+
     options = Options()
-    
 
     options.add_argument("--headless")
     options.add_argument("--disable-extensions")
@@ -34,25 +31,12 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
     options.add_argument("--disable-gpu")
-    
-    driver_manager = ChromeDriverManager()
-    chromedriver_path = driver_manager.install()
-    # Create Chrome WebDriver instance
-    driver = webdriver.Chrome( options=options)
 
-    # driver.set_page_load_timeout(60)
-    # wait = WebDriverWait(driver, 30)
-    # Create Chrome WebDriver instance
-    # Use ChromeDriverManager to automatically download and manage ChromeDriver
-    #chrome_driver_path = ChromeDriverManager("97.0.4692.71").install()
+    # Use chromedriver_autoinstaller to automatically download and manage ChromeDriver
+    install()  # This will install the latest version of ChromeDriver
 
     # Initialize Chrome WebDriver with options
-    driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
-
-
-    
-
-
+    driver = webdriver.Chrome(options=options)
 
    
     # Initialize csv_writer outside the try block
@@ -184,7 +168,7 @@ if submitted:
     st.download_button(
         label='Download CSV',
         data=csv_data,
-        file_name='reviews.csv'
+        file_name='Decathlon.csv'
     )
 
 else:
