@@ -29,7 +29,7 @@ def scrape_decathlon_product_with_selenium(url):
     options = Options()
     
     #options.binary_location = chromium_path
-    options.add_argument("--headless")
+    #options.add_argument("--headless")
     options.add_argument("--disable-extensions")
     options.add_argument("--display=:99")
     options.add_argument("--no-sandbox")  # Fix for sandbox issue on Linux
