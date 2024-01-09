@@ -19,12 +19,12 @@ from selenium.webdriver.chrome.service import Service
 # Function to scrape Decathlon product with Selenium
 
 def scrape_decathlon_product_with_selenium(url):
-    chromium_path = "chrome-linux/chrome"
-    chromedriver_path = "driver/chromedriver"  # Adjust the path accordingly
-    service = Service(executable_path=chromedriver_path)
+    # chromium_path = "chrome-linux/chrome"
+    # chromedriver_path = "driver/chromedriver"  # Adjust the path accordingly
+    # service = Service(executable_path=chromedriver_path)
+    
     options = Options()
-    def driver():
-        webdriver. Chrome(service=Service(ChromeDriverManager (). install()), options=options)
+    
     #options.binary_location = chromium_path
     options.add_argument("--headless")
     options.add_argument("--disable-extensions")
@@ -33,6 +33,7 @@ def scrape_decathlon_product_with_selenium(url):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")  # Set the window size
     options.add_argument("--disable-gpu")
+    
     # driver_manager = ChromeDriverManager()
     # chromedriver_path = driver_manager.install()
     # # Create Chrome WebDriver instance
@@ -40,6 +41,9 @@ def scrape_decathlon_product_with_selenium(url):
 
     # driver.set_page_load_timeout(60)
     # wait = WebDriverWait(driver, 30)
+    # Create Chrome WebDriver instance
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
+
     
 
 
