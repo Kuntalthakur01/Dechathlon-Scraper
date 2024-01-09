@@ -44,7 +44,12 @@ def scrape_decathlon_product_with_selenium(url):
     # driver.set_page_load_timeout(60)
     # wait = WebDriverWait(driver, 30)
     # Create Chrome WebDriver instance
-    driver = webdriver.Chrome(ChromeDriverManager("97.0.4692.71").install(), options=options)
+    # Use ChromeDriverManager to automatically download and manage ChromeDriver
+    chrome_driver_path = ChromeDriverManager("97.0.4692.71").install()
+
+    # Initialize Chrome WebDriver with options
+    driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
+
 
     
 
