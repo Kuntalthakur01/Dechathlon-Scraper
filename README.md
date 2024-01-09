@@ -1,4 +1,4 @@
-Here is a draft README.md for the Dechathlon Scraper GitHub repository:
+
 
 # Dechathlon Scraper
 
