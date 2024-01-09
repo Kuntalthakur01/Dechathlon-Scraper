@@ -2,7 +2,7 @@
 
 # Dechathlon Scraper
 
-This is a scraper built to extract data from Decathlon event pages.
+This is a scraper built to extract data from Decathlon page.
 
 ## Usage
 
