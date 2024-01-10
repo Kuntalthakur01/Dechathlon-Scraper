@@ -6,6 +6,10 @@ This is a scraper built to extract data from the Decathlon page. The app is buil
 
 ## Usage
 
+
+https://github.com/Kuntalthakur01/Dechathlon-Scraper/assets/80209678/2ac25eb4-99dc-421b-8676-d4d37151e8af
+
+
 1. Run the file development.py 
 ```
 streamlit run development.py
