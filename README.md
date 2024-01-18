@@ -29,11 +29,6 @@ The CSV includes:
 
 ## Requirements
 
-The scraper requires the following packages:
-
-- BeautifulSoup4
-- Requests
-
 Install required packages using pip:
 
 ```
