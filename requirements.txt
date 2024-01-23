@@ -62,4 +62,4 @@ selenium
 
 # streamlit
 # seleniumbase
-# webdriver-manager
+webdriver-manager
