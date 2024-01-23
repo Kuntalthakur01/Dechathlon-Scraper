@@ -58,4 +58,4 @@ selenium
 chromedriver-autoinstaller==0.6.3
 
 google-chrome-stable
-webdriver-manager
+webdriver-manager==94.0.4606.61-1
