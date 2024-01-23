@@ -138,6 +138,7 @@ def scrape_decathlon_product_with_selenium(url):
         # Close the webdriver
         driver.quit()
 
+# STREAMLIT CODE
 # Import libraries
 import streamlit as st
 
