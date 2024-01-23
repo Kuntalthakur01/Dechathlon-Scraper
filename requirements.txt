@@ -55,11 +55,11 @@ zipp==3.17.0
 streamlit
 selenium
 # Chrome 
-google-chrome-stable
+# google-chrome-stable
 
-# ChromeDriver
-chromedriver==109.0.5414.74
+# # ChromeDriver
+# chromedriver==109.0.5414.74
 
-streamlit
-seleniumbase
-webdriver-manager
+# streamlit
+# seleniumbase
+# webdriver-manager
